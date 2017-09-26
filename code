@@ -18,11 +18,17 @@ diesize = int(dielist[1])
 #print "Number of dice: " + str(dienumber)
 #print "Size of dice: " + str(diesize)
 
-integerstart = dienumber
+result = 0
+for _ in range(dienumber):
+ result = result + random.randint(1,diesize) 
+  
+print 'Result: ' + str(result)
 
-integerend = diesize * dienumber
-
+##used for doing a single 'die' for entire range, less correct
+#integerstart = dienumber
+#
+#integerend = diesize * dienumber
+#
 #Test line to confirm simple math.
 #print 'will produce integer between ' + str(integerstart) + ' and ' + str(integerend)
-
-print 'Result: ' + str(random.randint(integerstart,integerend))
+#print 'Result: ' + str(random.randint(integerstart,integerend))
