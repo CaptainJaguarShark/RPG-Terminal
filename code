@@ -1,0 +1,28 @@
+import random
+import sys
+
+dieinput = raw_input('State the Number of Dice to be rolled as NdD (eg, 2d6 or 3d8): ')
+
+##Test line to confirm entered input.
+#print 'You are rolling ' + dieinput
+
+dielist = dieinput.split('d')
+
+##Test line to confirm die splitting.
+#print dielist
+
+dienumber = int(dielist[0])
+diesize = int(dielist[1])
+
+##Test lines to confirm indexing.
+#print "Number of dice: " + str(dienumber)
+#print "Size of dice: " + str(diesize)
+
+integerstart = dienumber
+
+integerend = diesize * dienumber
+
+#Test line to confirm simple math.
+#print 'will produce integer between ' + str(integerstart) + ' and ' + str(integerend)
+
+print 'Result: ' + str(random.randint(integerstart,integerend))
