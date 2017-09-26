@@ -1,7 +1,9 @@
+#!/usr/bin/env python
+
 import random
 import sys
 
-dieinput = raw_input('State the Number of Dice to be rolled as NdD (eg, 2d6 or 3d8): ')
+dieinput = raw_input('State the Number of Dice to be rolled as NdD (eg, if rolling two six-sided dice, enter 2d6): ')
 
 ##Test line to confirm entered input.
 #print 'You are rolling ' + dieinput
