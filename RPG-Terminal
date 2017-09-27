@@ -5,8 +5,9 @@ import sys
 import re
 
 dieinput = raw_input('State the Number of Dice to be rolled as NdD (eg, if rolling two six-sided dice, enter 2d6): ')
+
 if re.match('^[0-9]*[dD][0-9]*$', dieinput) is None:
-    sys.exit('Please enter only in NdD format (eg, if rolling 3 eight-sided dice, enter 3d8)')
+    sys.exit('Please enter only in NdD format (eg, if rolling 3 eight-sided dice, enter 3d8). You\'ll have to start over now.')
 
 ##Test line to confirm entered input.
 #print 'You are rolling ' + dieinput
@@ -26,12 +27,19 @@ diesize = int(dielist[1])
 #print "Number of dice: " + str(dienumber)
 #print "Size of dice: " + str(diesize)
 
-result = 0
-
+##Old method for producing results. Doesn't support seeing result of individual die rolls.
+#result = 0
+#for _ in range(dienumber):
+#    result = result + random.randint(1,diesize) 
+#print 'Result: ' + str(result)
+ 
+dielist = []
 for _ in range(dienumber):
-    result = result + random.randint(1,diesize) 
-  
-print 'Result: ' + str(result)
+    dielist.append(random.randint(1,diesize))
+
+dietotal = sum(dielist)
+
+print 'Rolls: ', dielist, 'Total: ' + str(dietotal)
 
 ##used for doing a single 'die' for entire range, less correct
 #integerstart = dienumber
